@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.students_system.Controller"
+            prefHeight="400.0" prefWidth="600.0">
+    <center>
+        <TableView fx:id="studentsTable" prefHeight="200.0" prefWidth="400.0" BorderPane.alignment="CENTER" onMousePressed="#fillData">
+            <columns>
+                <TableColumn prefWidth="100" text="fName">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="first_name"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="100" text="lName">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="last_name"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="50" text="Age">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="age"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="150" text="Email">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="email"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+    <right>
+        <VBox>
+            <Label text="First name"></Label>
+            <TextField fx:id="txtFName"></TextField>
+            <Label text="Last name"></Label>
+            <TextField fx:id="txtLName"></TextField>
+            <Label text="Age"></Label>
+            <TextField fx:id="editAge"></TextField>
+
+            <Button fx:id="btnEdit" text="Edit" onAction="#updateStd"></Button>
+            <Button fx:id="btnDelete" text="Delete" onAction="#deleteStd"></Button>
+        </VBox>
+
+
+    </right>
+</BorderPane>
